@@ -9,7 +9,7 @@
       "sizes": "64x64"
     }],
     "scope": "/cards/",
-    "start_url": "/cards/debora/index.html",
+    "start_url": "https://sallesricardo.github.io/cards/debora/index.html",
     "display": "fullscreen",
     "orientation": "portrait",
     "theme_color": "aliceblue",
