@@ -1,0 +1,17 @@
+{
+    "lang": "pt_br",
+    "dir": "ltr",
+    "name": "Debora Germano",
+    "description": "Debora Germano - Fotografia",
+    "short_name": "Debora",
+    "icons": [{
+      "src": "./imgs/favicon.ico",
+      "sizes": "64x64"
+    }],
+    "scope": "/cards/",
+    "start_url": "/debora/index.html",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "theme_color": "aliceblue",
+    "background_color": "white"
+  }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./static/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Josefin+Sans|Pathway+Gothic+One|Quattrocento+Sans&display=swap" rel="stylesheet"> 
+    <style>
+        .navbar{
+            height: 91px;
+            align-content: center;
+            background-image: url("./imgs/navbar4.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .whitebar{
+            height: 8px;
+            width: 100%;
+            margin-top: 40px;
+            margin-left: 0px;
+            margin-right: 0px;
+            background-color: white;
+        }
+        #contact-tag{
+            width: 80%;
+            padding-top: 10px;
+            font-family: 'Pathway Gothic One', sans-serif;
+        }
+        .fab, .fas {
+            font-size: 3em;
+            padding: 6px;
+            
+        }
+        .logo {
+            height: auto;
+            width: 80%;
+        }
+        #tags{
+            font-size: 1em;
+            font-family: 'Josefin Sans', sans-serif;
+            /* font-family: 'Exo 2', sans-serif;
+            font-family: 'Quattrocento Sans', sans-serif; */
+        }
+        body{
+            background:url("./imgs/footer1.png") no-repeat center bottom;
+        }
+    </style>
+    <title>Debora Germano - Fotografia</title>
+</head>
+<body>
+    <nav class="navbar justify-content-center">
+        <div class="whitebar"></div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col12">
+                <img src="./imgs/logo1.png" alt="" class="img-fluid mx-auto d-block logo">
+            </div>
+        </div>
+        <div class="row justify-content-center ">
+            <div id="contact-tag" class="col12 bg-primary text-light rounded-pill text-center align-middle">
+                <h3>TOQUE NOS ICONES PARA INTERAGIR</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center p-4">
+            <div class="col3 mx-1">
+                <a class="btn btn-primary rounded-circle" href="https://api.whatsapp.com/send?1=pt_BR&phone=5511954325665">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="col3 mx-1">
+                <a class="btn btn-primary rounded-circle" href="https://www.instagram.com/deboragermanofotografia/">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="col3 mx-1">
+                <a class="btn btn-primary rounded-circle" href="https://www.facebook.com/deboragermanofotografia/">
+                <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+            <div class="col3 mx-1">
+                <a class="btn btn-primary rounded-circle" href="https://www.deboragermano.com.br/">
+                <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row justify-content-center ">
+            <div id="tags" class="col12 text-center align-middle">
+                <p>
+                    Gestantes - Recém nascidos - Bebês
+                    Famílias - Smash the cake - Fotografias Temáticas
+                    formaturinha Maternal - chá de bebê
+                    Aniversários - Book 15 anos
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+    </div>
+    <footer>
+        <script src="./static/bootstrap.min.js"></script>
+        <script src="./static/jquery-3.4.1.min.js"></script>
+    </footer>
+    </body>
+</html>
