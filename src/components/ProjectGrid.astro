@@ -1,0 +1,83 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
+
+const lowLevelProjects = sortedProjects.filter(p => p.data.category === 'low-level');
+const fullstackProjects = sortedProjects.filter(p => p.data.category === 'fullstack');
+---
+
+<section id="projetos" class="max-w-6xl mx-auto px-4 py-20 md:py-28">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+    <!-- COLUNA DE BAIXO NÍVEL / HARDWARE -->
+    <div class="space-y-10">
+      <div class="border-b border-zinc-900 pb-5">
+        <h2 class="text-2xl font-mono font-bold text-emerald-400 flex items-center gap-2">
+          <span>01 //</span> Firmware & Hardware
+        </h2>
+        <p class="text-sm text-zinc-400 mt-1">Sistemas embarcados, análise de protocolos e manipulação de barramentos físicos.</p>
+      </div>
+
+      <div class="space-y-8">
+        {lowLevelProjects.map(async (project) => {
+          const { Content } = await render(project);
+          return (
+            <div class="group relative bg-zinc-900/20 backdrop-blur-md border border-zinc-900 p-6 rounded-xl hover:bg-zinc-900/40 hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-500/5">
+              <h3 class="text-xl font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">{project.data.title}</h3>
+              <p class="text-sm text-zinc-400 my-3 leading-relaxed">{project.data.description}</p>
+
+              <div class="text-xs text-zinc-400 font-sans opacity-80 border-l-2 border-zinc-800 pl-3 py-1 my-4 space-y-2">
+                <Content />
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mt-4">
+                {project.data.technologies.map(tech => (
+                  <span class="text-[11px] font-mono bg-zinc-900 border border-zinc-800 text-emerald-300 px-2.5 py-0.5 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
+    <!-- COLUNA DE fullstack & NUVEM -->
+    <div class="space-y-10">
+      <div class="border-b border-zinc-900 pb-5">
+        <h2 class="text-2xl font-mono font-bold text-purple-400 flex items-center gap-2">
+          <span>02 //</span> Fullstack & Nuvem
+        </h2>
+        <p class="text-sm text-zinc-400 mt-1">Modelagem relacional, arquitetura de APIs REST e integrações seguras de dados.</p>
+      </div>
+
+      <div class="space-y-8">
+        {fullstackProjects.map(async (project) => {
+          const { Content } = await render(project);
+          return (
+            <div class="group relative bg-zinc-900/20 backdrop-blur-md border border-zinc-900 p-6 rounded-xl hover:bg-zinc-900/40 hover:border-purple-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/5">
+              <h3 class="text-xl font-bold text-zinc-100 group-hover:text-purple-400 transition-colors">{project.data.title}</h3>
+              <p class="text-sm text-zinc-400 my-3 leading-relaxed">{project.data.description}</p>
+
+              <div class="text-xs text-zinc-400 font-sans leading-relaxed border-l border-zinc-800/80 pl-3 py-1 my-4 space-y-2 prose-code:font-mono prose-code:bg-zinc-900 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-zinc-200 prose-code:border prose-code:border-zinc-800/60">
+                  <Content />
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 mt-4">
+                {project.data.technologies.map(tech => (
+                  <span class="text-[11px] font-mono bg-zinc-900 border border-zinc-800 text-purple-300 px-2.5 py-0.5 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+
+  </div>
+</section>

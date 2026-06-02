@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portfólio Híbrido - Engenharia de Software de Ponta a Ponta (Do Silício à Nuvem)" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- Google Fonts para um visual limpo e técnico -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-zinc-950 text-zinc-50 font-sans antialiased selection:bg-purple-500/30 selection:text-purple-200">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	body {
+		font-family: 'Inter', sans-serif;
+	}
+	.font-mono {
+		font-family: 'Fira Code', monospace;
+	}
+
+    /* Efeito de iluminação suave no fundo do site */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 25%;
+      width: 50%;
+      height: 600px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: 800px;
+      right: 10%;
+      width: 40%;
+      height: 500px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+/* Customização da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202024;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a30;
+}
+</style>
